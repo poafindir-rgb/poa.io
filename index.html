@@ -197,14 +197,6 @@
       background: #ffd42a;
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
-
     .request-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -431,33 +423,6 @@
       font-weight: 800;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .service {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.48);
-      padding: 28px;
-      box-shadow: 0 18px 50px rgba(25, 20, 10, 0.08);
-    }
-
-    .service h3 {
-      margin: 0 0 14px;
-      font-size: 25px;
-    }
-
-    .service ul {
-      margin: 0;
-      padding-left: 20px;
-      color: #444;
-      line-height: 1.65;
-      font-size: 17px;
-    }
-
     .contact-section {
       border-top: 1px solid var(--line);
     }
@@ -514,10 +479,6 @@
         grid-template-columns: 1fr;
       }
 
-      .services {
-        grid-template-columns: 1fr;
-      }
-
       .section-head {
         display: block;
       }
@@ -553,7 +514,6 @@
 
       .request-card,
       .about-card,
-      .service,
       .contact-box,
       .project-body {
         padding: 22px;
@@ -578,7 +538,6 @@
         <a href="#offer">Главная</a>
         <a href="#portfolio">Портфолио</a>
         <a href="#about">Обо мне</a>
-        <a href="#services">Что делаю</a>
         <a href="#demo">Демонстрация</a>
       </nav>
     </div>
@@ -777,56 +736,6 @@
           <div class="contact-line">
             <a class="pill" href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Какие проекты делаю</h2>
-          <p>
-            Быстрые AI-приложения под конкретный процесс в ЖКХ:
-            от приёма заявки до документов, контроля качества и управленческой аналитики.
-          </p>
-        </div>
-
-        <div class="services">
-          <article class="service">
-            <h3>AI-диспетчеризация / Service Desk</h3>
-            <ul>
-              <li>Классификация обращений + уточнения по чек-листу.</li>
-              <li>SLA, приоритеты, статусы, маршруты и “окна доступа”.</li>
-              <li>Роли: житель / диспетчер / мастер / руководитель + аналитика.</li>
-            </ul>
-          </article>
-
-          <article class="service">
-            <h3>AI-документооборот</h3>
-            <ul>
-              <li>Генерация протоколов, уведомлений, актов, бюллетеней.</li>
-              <li>Проверка комплектности и логики: кворум, приложения, ошибки.</li>
-              <li>Экспорт PDF/ZIP “пакет для архива/проверок”.</li>
-            </ul>
-          </article>
-
-          <article class="service">
-            <h3>Контроль качества “до/после”</h3>
-            <ul>
-              <li>Проверка комплектности фото и ракурсов.</li>
-              <li>Авто-описание изменений и выявление недостающих доказательств.</li>
-              <li>Отчёт + акт в PDF.</li>
-            </ul>
-          </article>
-
-          <article class="service">
-            <h3>Форматы работы</h3>
-            <ul>
-              <li>MVP/демо за короткий цикл.</li>
-              <li>Доработка под нужный процесс компании.</li>
-              <li>Подготовка к пилоту: роли, данные, сценарии, документы.</li>
-            </ul>
-          </article>
         </div>
       </div>
     </section>
