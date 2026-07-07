@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI-автоматизация для B2B — лендинг + портфолио</title>
-  <meta name="description" content="AI-native B2B веб-приложения: заявки, SLA, документы, реестры, контроль качества, аналитика и дашборды." />
+  <title>ЖКХ AI приложения — лендинг + портфолио</title>
+  <meta name="description" content="AI-приложения для ЖКХ: заявки, диспетчеризация, документы, контроль качества работ и автоматизация процессов управляющих компаний." />
 
   <style>
     :root {
@@ -13,10 +13,8 @@
       --text: #171717;
       --muted: #656565;
       --line: rgba(20, 20, 20, 0.14);
-      --card: rgba(255, 255, 255, 0.55);
       --black: #171717;
       --yellow: #fac91c;
-      --yellow-dark: #d7a900;
       --shadow: 0 24px 80px rgba(25, 20, 10, 0.12);
       --radius: 30px;
       --max: 1180px;
@@ -153,57 +151,31 @@
       line-height: 1.55;
       color: #444;
       max-width: 760px;
-      margin: 0 0 26px;
+      margin: 0 0 28px;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 30px 0;
-    }
-
-    .stat {
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.45);
-    }
-
-    .stat b {
-      display: block;
-      font-size: 34px;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .tags {
+    .hero-project-list {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 26px 0;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0 0 28px;
     }
 
-    .tag {
+    .hero-project-item {
       border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 10px 14px;
-      color: #444;
-      background: rgba(255, 255, 255, 0.4);
-      font-weight: 700;
-      font-size: 14px;
+      border-radius: 20px;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.45);
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.35;
     }
 
     .actions {
       display: flex;
-      gap: 12px;
+      gap: 18px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 18px;
     }
 
     .btn {
@@ -593,8 +565,9 @@
         padding-top: 38px;
       }
 
-      .stats {
-        grid-template-columns: 1fr;
+      .hero-project-item {
+        font-size: 19px;
+        padding: 16px 18px;
       }
 
       .request-card,
@@ -621,11 +594,11 @@
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="На главную">
         <span class="brand-mark">AI</span>
-        <span>AI-автоматизация • B2B</span>
+        <span>ЖКХ AI приложения</span>
       </a>
 
       <nav class="nav-links" aria-label="Навигация">
-        <a href="#offer">Предложение</a>
+        <a href="#offer">Главная</a>
         <a href="#portfolio">Портфолио</a>
         <a href="#about">Обо мне</a>
         <a href="#services">Что делаю</a>
@@ -638,37 +611,21 @@
     <section class="hero" id="offer">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Основное предложение</div>
+          <div class="eyebrow">AI решения для ЖКХ</div>
 
-          <h1>Соберу AI-приложение для вашего процесса за дни, а не месяцы.</h1>
+          <h1>ЖКХ AI приложения</h1>
 
           <p class="lead">
-            Делаю AI-native B2B веб-приложения: заявки/обращения, SLA, документы PDF/ZIP,
-            реестры, контроль качества “до/после”, аналитика и дашборды.
-            Подходит УК/ТСЖ и любому сервисному бизнесу.
+            Разрабатываю AI-приложения для ЖКХ, управляющих компаний и сервисных организаций:
+            для обработки заявок, диспетчеризации, контроля качества выполненных работ,
+            подготовки документов и автоматизации повседневных процессов. Такие решения помогают
+            ускорять работу сотрудников, повышать прозрачность процессов и улучшать сервис для жителей.
           </p>
 
-          <div class="stats">
-            <div class="stat">
-              <b>3</b>
-              <span>готовых демо-проекта</span>
-            </div>
-            <div class="stat">
-              <b>B2B</b>
-              <span>продуктовый подход</span>
-            </div>
-            <div class="stat">
-              <b>MVP</b>
-              <span>быстрый запуск</span>
-            </div>
-          </div>
-
-          <div class="tags">
-            <span class="tag">Заявки + статусы</span>
-            <span class="tag">SLA + приоритеты</span>
-            <span class="tag">PDF/ZIP документы</span>
-            <span class="tag">Gemini / AI Studio</span>
-            <span class="tag">React / TS</span>
+          <div class="hero-project-list">
+            <div class="hero-project-item">Актирование работ ЖКХ (до/после)</div>
+            <div class="hero-project-item">Нейро-диспетчер УК / Facility Desk</div>
+            <div class="hero-project-item">ОСС-ДокМастер</div>
           </div>
 
           <div class="actions">
@@ -705,7 +662,7 @@
             </div>
 
             <div class="hint">
-              Совет: укажите роли пользователей + входные данные — текст, фото, таблицы — + желаемый результат и сроки.
+              Совет: укажите роли пользователей + входные данные — текст, фото, таблицы — и желаемый результат.
             </div>
           </form>
         </aside>
@@ -717,8 +674,8 @@
         <div class="section-head">
           <h2>Портфолио AI-приложений</h2>
           <p>
-            Ниже — три демонстрационных проекта. Каждый показывает отдельный B2B-сценарий:
-            контроль работ, диспетчеризацию обращений и подготовку юридически значимых документов.
+            Ниже — три демонстрационных проекта для сферы ЖКХ и управления недвижимостью:
+            контроль выполненных работ, нейро-диспетчеризация заявок и подготовка документов ОСС.
           </p>
         </div>
 
@@ -847,30 +804,18 @@
         </div>
 
         <div class="about-card">
-          <h3>AI-разработка для B2B: от постановки до работающего демо.</h3>
+          <h3>AI-разработка для ЖКХ: от идеи до работающего демо.</h3>
 
           <p>
-            Я разрабатываю AI-native веб-приложения для B2B: автоматизация заявок,
-            документов и контроль качества работ. Сильные стороны — продуктовая постановка задачи,
-            conversational UX, устойчивые промты, аккуратные интерфейсы и доведение демо до пилота:
-            роли, статусы, реестры, экспорт PDF/ZIP.
+            Я разрабатываю AI-приложения для ЖКХ, управляющих компаний и сервисных процессов:
+            автоматизация заявок, документов, контроля качества работ и диспетчеризации.
+            Основной подход — сделать понятный рабочий инструмент, который можно быстро показать,
+            протестировать и затем доработать до пилота.
           </p>
-
-          <div class="tags">
-            <span class="tag">Product + Full-stack</span>
-            <span class="tag">B2B процессы</span>
-            <span class="tag">React / TypeScript</span>
-            <span class="tag">Gemini / AI Studio</span>
-            <span class="tag">Документы / Реестры</span>
-          </div>
 
           <div class="contact-line">
             <a class="pill" href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a>
           </div>
-
-          <p class="hint">
-            Опыт/цифры можно дописать одной строкой: годы, отрасли, масштабы, KPI.
-          </p>
         </div>
       </div>
     </section>
@@ -880,8 +825,8 @@
         <div class="section-head">
           <h2>Какие проекты делаю</h2>
           <p>
-            Быстрые AI-приложения под конкретный процесс: от приёма заявки до документов,
-            контроля качества и управленческой аналитики.
+            Быстрые AI-приложения под конкретный процесс в ЖКХ:
+            от приёма заявки до документов, контроля качества и управленческой аналитики.
           </p>
         </div>
 
@@ -917,8 +862,8 @@
             <h3>Форматы работы</h3>
             <ul>
               <li>MVP/демо за короткий цикл.</li>
-              <li>Аудит промтов и устойчивости.</li>
-              <li>Доработка до пилота: роли, данные, метрики.</li>
+              <li>Доработка под нужный процесс компании.</li>
+              <li>Подготовка к пилоту: роли, данные, сценарии, документы.</li>
             </ul>
           </article>
         </div>
@@ -930,12 +875,12 @@
         <div class="contact-box">
           <h2>Готов обсудить задачу и предложить план работ.</h2>
           <p>
-            Напишите, что автоматизируем: процесс, кто пользователи — роли,
-            какие входные данные — текст, фото, таблицы, и что нужно на выходе:
-            панель, документ, интеграция. Я отвечу с вариантом решения и шагами.
+            Напишите, какой процесс в ЖКХ вы хотите автоматизировать:
+            заявки, диспетчеризацию, документы, контроль работ или другое направление.
+            Я отвечу с вариантом решения и следующими шагами.
           </p>
 
-          <a class="btn btn-primary" href="mailto:poa.findir@gmail.com?subject=Запрос%20на%20AI-автоматизацию&body=Здравствуйте!%0A%0AХочу%20обсудить%20AI-автоматизацию.%0A%0AПроцесс:%0AПользователи/роли:%0AВходные%20данные:%0AЧто%20нужно%20на%20выходе:%0AСроки:%0A%0AКонтакт:%0A">
+          <a class="btn btn-primary" href="mailto:poa.findir@gmail.com?subject=Запрос%20на%20ЖКХ%20AI-приложение&body=Здравствуйте!%0A%0AХочу%20обсудить%20AI-приложение%20для%20ЖКХ.%0A%0AПроцесс:%0AПользователи/роли:%0AВходные%20данные:%0AЧто%20нужно%20на%20выходе:%0AСроки:%0A%0AКонтакт:%0A">
             Написать на почту
           </a>
         </div>
@@ -945,7 +890,7 @@
 
   <footer>
     <div class="wrap footer-row">
-      <div>© <span id="year"></span> • AI-автоматизация для B2B</div>
+      <div>© <span id="year"></span> • ЖКХ AI приложения</div>
       <div>Контакт: <a href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a></div>
     </div>
   </footer>
@@ -958,12 +903,12 @@
     }
 
     function makeMailto({ name, email, phone, task }) {
-      const subject = "Запрос на AI-автоматизацию";
+      const subject = "Запрос на ЖКХ AI-приложение";
 
       const body = [
         "Здравствуйте!",
         "",
-        "Хочу обсудить AI-автоматизацию.",
+        "Хочу обсудить AI-приложение для ЖКХ.",
         "",
         "Имя: " + (name || "не указано"),
         "Email: " + (email || "не указан"),
