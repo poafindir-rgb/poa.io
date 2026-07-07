@@ -358,21 +358,10 @@
       flex-direction: column;
     }
 
-    .project-wide {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-    }
-
     .project-img {
       aspect-ratio: 16 / 10;
       background: #e9e0cb;
       overflow: hidden;
-    }
-
-    .project-wide .project-img {
-      aspect-ratio: auto;
-      min-height: 430px;
     }
 
     .project-img img {
@@ -570,17 +559,6 @@
 
       .portfolio {
         grid-template-columns: 1fr;
-      }
-
-      .project-wide {
-        grid-column: auto;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .project-wide .project-img {
-        min-height: auto;
-        aspect-ratio: 16 / 10;
       }
 
       .services {
@@ -819,7 +797,7 @@
             </div>
           </article>
 
-          <article class="project project-wide">
+          <article class="project">
             <div class="project-img">
               <img src="oss-docmaster-1.png" alt="ОСС-ДокМастер" />
             </div>
