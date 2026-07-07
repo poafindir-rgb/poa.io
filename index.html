@@ -211,28 +211,16 @@
       background: rgba(255, 255, 255, 0.58);
       box-shadow: var(--shadow);
       padding: 30px;
+      scroll-margin-top: 95px;
     }
 
-    .request-card h2 {
-      margin: 0 0 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #686868;
-      font-size: 20px;
-    }
-
-    .request-card p {
-      margin: 0 0 24px;
-      color: #4c4c4c;
-      font-size: 18px;
-      line-height: 1.45;
-    }
-
-    .full-button {
-      width: 100%;
-      min-height: 72px;
-      font-size: 25px;
-      margin-bottom: 26px;
+    .demo-title {
+      margin: 0 0 28px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--text);
     }
 
     .form-row {
@@ -379,8 +367,8 @@
     }
 
     .small-btn {
-      min-height: 48px;
-      padding: 0 19px;
+      min-height: 52px;
+      padding: 0 22px;
       font-size: 15px;
     }
 
@@ -574,10 +562,6 @@
       .project h3 {
         font-size: 25px;
       }
-
-      .full-button {
-        font-size: 21px;
-      }
     }
   </style>
 </head>
@@ -595,7 +579,7 @@
         <a href="#portfolio">Портфолио</a>
         <a href="#about">Обо мне</a>
         <a href="#services">Что делаю</a>
-        <a href="#contact">Контакт</a>
+        <a href="#demo">Демонстрация</a>
       </nav>
     </div>
   </header>
@@ -622,13 +606,10 @@
           </div>
         </div>
 
-        <aside class="request-card" aria-label="Быстрый запрос">
-          <h2>Быстрый запрос (2–3 минуты)</h2>
-          <p>Нажимая “Сделать запрос”, откроется ваш почтовый клиент с готовым письмом.</p>
+        <aside class="request-card" id="demo" aria-label="Записаться на демонстрацию">
+          <div class="demo-title">Записаться на демонстрацию</div>
 
           <form id="requestForm">
-            <button class="btn btn-primary full-button" type="submit">Сделать запрос</button>
-
             <div class="form-row">
               <label for="name">Имя</label>
               <input id="name" name="name" type="text" placeholder="Александр" autocomplete="name" />
@@ -699,8 +680,7 @@
               </ul>
 
               <div class="project-actions">
-                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/jkh-acts/" target="_blank" rel="noopener">Открыть сайт</a>
-                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
+                <a class="btn btn-primary small-btn" href="#demo">Записаться на демонстрацию</a>
               </div>
             </div>
           </article>
@@ -736,8 +716,7 @@
               </ul>
 
               <div class="project-actions">
-                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/uk-neuro-dispatcher/" target="_blank" rel="noopener">Открыть сайт</a>
-                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
+                <a class="btn btn-primary small-btn" href="#demo">Записаться на демонстрацию</a>
               </div>
             </div>
           </article>
@@ -776,8 +755,7 @@
               </ul>
 
               <div class="project-actions">
-                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/oss-docmaster/" target="_blank" rel="noopener">Открыть сайт</a>
-                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
+                <a class="btn btn-primary small-btn" href="#demo">Записаться на демонстрацию</a>
               </div>
             </div>
           </article>
@@ -884,52 +862,6 @@
   </footer>
 
   <script>
-    const OWNER_EMAIL = "poa.findir@gmail.com";
-
-    function cleanText(value) {
-      return String(value || "").trim();
-    }
-
-    function makeMailto({ name, email, phone, task }) {
-      const subject = "Запрос на ЖКХ AI-приложение";
-
-      const body = [
-        "Здравствуйте!",
-        "",
-        "Хочу обсудить AI-приложение для ЖКХ.",
-        "",
-        "Имя: " + (name || "не указано"),
-        "Email: " + (email || "не указан"),
-        "Телефон: " + (phone || "не указан"),
-        "",
-        "Коротко о задаче:",
-        task || "не указано",
-        "",
-        "Процесс:",
-        "Пользователи / роли:",
-        "Входные данные:",
-        "Что нужно на выходе:",
-        "Сроки:"
-      ].join("\n");
-
-      return "mailto:" + OWNER_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-    }
-
-    document.getElementById("requestForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const form = event.currentTarget;
-
-      const name = cleanText(form.elements.name.value);
-      const email = cleanText(form.elements.email.value);
-      const phone = cleanText(form.elements.phone.value);
-      const task = cleanText(form.elements.task.value);
-
-      window.location.href = makeMailto({ name, email, phone, task });
-    });
-
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
