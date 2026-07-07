@@ -116,7 +116,7 @@
     }
 
     .hero {
-      padding: 64px 0 56px;
+      padding: 64px 0 34px;
     }
 
     .hero-grid {
@@ -338,6 +338,98 @@
       margin: 0;
     }
 
+    .portfolio-section {
+      padding-top: 26px;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.62);
+      box-shadow: 0 18px 50px rgba(25, 20, 10, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .project-img {
+      aspect-ratio: 16 / 10;
+      background: #e9e0cb;
+      overflow: hidden;
+    }
+
+    .project-wide .project-img {
+      aspect-ratio: auto;
+      min-height: 430px;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+    }
+
+    .project h3 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .project p {
+      margin: 0;
+      color: #3f3f3f;
+      line-height: 1.55;
+      font-size: 18px;
+    }
+
+    .project ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #444;
+      line-height: 1.58;
+      font-size: 16px;
+    }
+
+    .project-subtitle {
+      font-weight: 900;
+      color: #1f1f1f;
+      margin-bottom: -8px;
+    }
+
+    .project-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .small-btn {
+      min-height: 48px;
+      padding: 0 19px;
+      font-size: 15px;
+    }
+
     .about {
       display: grid;
       grid-template-columns: 0.75fr 1.25fr;
@@ -424,75 +516,6 @@
       font-size: 17px;
     }
 
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .project {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.58);
-      box-shadow: 0 18px 50px rgba(25, 20, 10, 0.08);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-img {
-      aspect-ratio: 16 / 10;
-      background: #e9e0cb;
-      overflow: hidden;
-    }
-
-    .project-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .project-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      flex: 1;
-    }
-
-    .project h3 {
-      margin: 0;
-      font-size: 23px;
-      line-height: 1.15;
-    }
-
-    .project p {
-      margin: 0;
-      color: #454545;
-      line-height: 1.5;
-    }
-
-    .project ul {
-      margin: 0;
-      padding-left: 19px;
-      color: #444;
-      line-height: 1.55;
-      font-size: 15px;
-    }
-
-    .project-actions {
-      margin-top: auto;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .small-btn {
-      min-height: 44px;
-      padding: 0 17px;
-      font-size: 14px;
-    }
-
     .contact-section {
       border-top: 1px solid var(--line);
     }
@@ -549,6 +572,17 @@
         grid-template-columns: 1fr;
       }
 
+      .project-wide {
+        grid-column: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-wide .project-img {
+        min-height: auto;
+        aspect-ratio: 16 / 10;
+      }
+
       .services {
         grid-template-columns: 1fr;
       }
@@ -588,8 +622,13 @@
       .request-card,
       .about-card,
       .service,
-      .contact-box {
+      .contact-box,
+      .project-body {
         padding: 22px;
+      }
+
+      .project h3 {
+        font-size: 25px;
       }
 
       .full-button {
@@ -609,9 +648,9 @@
 
       <nav class="nav-links" aria-label="Навигация">
         <a href="#offer">Предложение</a>
+        <a href="#portfolio">Портфолио</a>
         <a href="#about">Обо мне</a>
         <a href="#services">Что делаю</a>
-        <a href="#portfolio">Портфолио</a>
         <a href="#contact">Контакт</a>
       </nav>
     </div>
@@ -695,6 +734,134 @@
       </div>
     </section>
 
+    <section class="portfolio-section" id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Портфолио AI-приложений</h2>
+          <p>
+            Ниже — три демонстрационных проекта. Каждый показывает отдельный B2B-сценарий:
+            контроль работ, диспетчеризацию обращений и подготовку юридически значимых документов.
+          </p>
+        </div>
+
+        <div class="portfolio">
+          <article class="project">
+            <div class="project-img">
+              <img src="jkh-acts-1.png" alt="Актирование работ ЖКХ" />
+            </div>
+
+            <div class="project-body">
+              <h3>Проект 1 — «Актирование работ ЖКХ до/после»</h3>
+
+              <p>
+                Приложение для управляющих компаний, подрядчиков и служб эксплуатации.
+                Помогает фиксировать выполненные работы, собирать доказательства качества,
+                сравнивать состояние объекта “до” и “после”, а затем формировать акт и отчёт.
+              </p>
+
+              <div class="project-subtitle">Что автоматизирует:</div>
+              <ul>
+                <li>создание заявки на работу с адресом, описанием, исполнителем и статусом;</li>
+                <li>загрузку фото “до” и “после” для подтверждения результата;</li>
+                <li>AI-проверку комплектности доказательств и выявление недостающих фото;</li>
+                <li>формирование текстового заключения по качеству выполненных работ;</li>
+                <li>подготовку PDF-отчёта для заказчика, УК, ТСЖ или внутреннего архива.</li>
+              </ul>
+
+              <div class="project-subtitle">Польза для бизнеса:</div>
+              <ul>
+                <li>меньше споров с подрядчиками и собственниками;</li>
+                <li>быстрее закрываются работы и акты;</li>
+                <li>у руководителя появляется единый реестр выполненных задач и проблемных объектов.</li>
+              </ul>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/jkh-acts/" target="_blank" rel="noopener">Открыть сайт</a>
+                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-img">
+              <img src="uk-dispatcher-1.png" alt="Нейро-диспетчер УК" />
+            </div>
+
+            <div class="project-body">
+              <h3>Проект 2 — «Нейро-диспетчер УК / Facility Desk»</h3>
+
+              <p>
+                Система для приёма, классификации и контроля обращений жителей, арендаторов,
+                клиентов или сотрудников. AI помогает диспетчеру быстро понять суть обращения,
+                задать уточняющие вопросы, определить приоритет и направить задачу исполнителю.
+              </p>
+
+              <div class="project-subtitle">Что автоматизирует:</div>
+              <ul>
+                <li>приём обращений по авариям, ремонтам, эксплуатации и сервисным заявкам;</li>
+                <li>AI-классификацию обращения по типу, срочности и зоне ответственности;</li>
+                <li>назначение SLA, приоритета и ответственной бригады;</li>
+                <li>ведение статусов: новая, в работе, просрочена, выполнена, закрыта;</li>
+                <li>операционную сводку по заявкам, просрочкам, нагрузке и качеству выполнения.</li>
+              </ul>
+
+              <div class="project-subtitle">Польза для бизнеса:</div>
+              <ul>
+                <li>диспетчер быстрее обрабатывает поток обращений;</li>
+                <li>руководитель видит просрочки и узкие места;</li>
+                <li>исполнители получают более понятные задачи с нужными уточнениями.</li>
+              </ul>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/uk-neuro-dispatcher/" target="_blank" rel="noopener">Открыть сайт</a>
+                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-wide">
+            <div class="project-img">
+              <img src="oss-docmaster-1.png" alt="ОСС-ДокМастер" />
+            </div>
+
+            <div class="project-body">
+              <h3>Проект 3 — «ОСС-ДокМастер»</h3>
+
+              <p>
+                Приложение для подготовки и проверки документов общего собрания собственников.
+                Система помогает собрать параметры собрания, сформировать повестку,
+                подготовить бюллетени и протоколы, проверить комплектность пакета документов
+                и выгрузить результат для архива или дальнейшей работы.
+              </p>
+
+              <div class="project-subtitle">Что автоматизирует:</div>
+              <ul>
+                <li>создание нового ОСС с указанием дома, формы собрания, дат и параметров голосования;</li>
+                <li>формирование повестки и структуры вопросов для голосования;</li>
+                <li>подготовку бюллетеней, уведомлений, протоколов и сопроводительных материалов;</li>
+                <li>AI-проверку логики документов: заполненность, противоречия, ошибки, недостающие поля;</li>
+                <li>ведение реестров собственников, решений, голосов и статуса подготовки пакета;</li>
+                <li>экспорт комплекта документов в PDF/ZIP для хранения, передачи или проверки.</li>
+              </ul>
+
+              <div class="project-subtitle">Польза для бизнеса:</div>
+              <ul>
+                <li>снижается риск ошибок в документах ОСС;</li>
+                <li>юрист или управляющий быстрее собирает комплект документов;</li>
+                <li>появляется понятный пошаговый процесс подготовки собрания;</li>
+                <li>можно масштабировать под УК, ТСЖ, девелопера или управляющую недвижимостью компанию.</li>
+              </ul>
+
+              <div class="project-actions">
+                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/oss-docmaster/" target="_blank" rel="noopener">Открыть сайт</a>
+                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="wrap about">
         <div class="portrait">
@@ -775,89 +942,6 @@
               <li>Аудит промтов и устойчивости.</li>
               <li>Доработка до пилота: роли, данные, метрики.</li>
             </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Портфолио</h2>
-          <p>
-            Примеры AI-приложений со скриншотами: заявки, акты, диспетчеризация,
-            документы и экспорт результатов.
-          </p>
-        </div>
-
-        <div class="portfolio">
-          <article class="project">
-            <div class="project-img">
-              <img src="jkh-acts-1.png" alt="Актирование работ ЖКХ" />
-            </div>
-
-            <div class="project-body">
-              <h3>Проект 1 — «Актирование работ ЖКХ (до/после)»</h3>
-              <p>
-                Фиксация выполненных работ, проверка качества “до/после”,
-                генерация PDF: акт + отчёт.
-              </p>
-              <ul>
-                <li>Реестр заявок со статусами и поиском.</li>
-                <li>AI-классификация работ + чек-лист фото-доказательств.</li>
-                <li>PDF: акт + иллюстрированный отчёт.</li>
-              </ul>
-              <div class="project-actions">
-                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/jkh-acts/" target="_blank" rel="noopener">Открыть сайт</a>
-                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-img">
-              <img src="uk-dispatcher-1.png" alt="Нейро-диспетчер УК" />
-            </div>
-
-            <div class="project-body">
-              <h3>Проект 2 — «Нейро-диспетчер УК / Facility Desk»</h3>
-              <p>
-                Приём обращений, уточнения по чек-листу, SLA, задачи техникам,
-                аналитика причин и нагрузки.
-              </p>
-              <ul>
-                <li>Роли: житель / диспетчер / мастер / руководитель.</li>
-                <li>AI: классификация + уточняющие вопросы + инструкции.</li>
-                <li>Аналитика: SLA, причины аварий, загрузка бригад.</li>
-              </ul>
-              <div class="project-actions">
-                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/uk-neuro-dispatcher/" target="_blank" rel="noopener">Открыть сайт</a>
-                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-img">
-              <img src="oss-docmaster-1.png" alt="ОСС-ДокМастер" />
-            </div>
-
-            <div class="project-body">
-              <h3>Проект 3 — «ОСС-ДокМастер»</h3>
-              <p>
-                Подготовка ОСС: повестка, бюллетени, протоколы, проверки,
-                реестры, экспорт ZIP.
-              </p>
-              <ul>
-                <li>Конструктор ОСС: тип, даты, повестка, собственники.</li>
-                <li>AI-генерация документов + compliance-проверки.</li>
-                <li>Экспорт PDF/ZIP “пакет для архива”.</li>
-              </ul>
-              <div class="project-actions">
-                <a class="btn btn-secondary small-btn" href="https://poafindir-rgb.github.io/oss-docmaster/" target="_blank" rel="noopener">Открыть сайт</a>
-                <a class="btn btn-primary small-btn" href="#contact">Сделать заказ</a>
-              </div>
-            </div>
           </article>
         </div>
       </div>
