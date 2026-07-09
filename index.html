@@ -238,11 +238,6 @@
       color: var(--text);
     }
 
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
     input:focus,
     textarea:focus {
       border-color: rgba(250, 201, 28, 0.9);
@@ -423,6 +418,15 @@
       font-weight: 800;
     }
 
+    .bottom-demo {
+      padding: 30px 0 58px;
+    }
+
+    .bottom-demo .request-card {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
     footer {
       padding: 28px 0 42px;
       color: var(--muted);
@@ -527,29 +531,29 @@
           </p>
 
           <div class="hero-project-list">
-            <div class="hero-project-item">AI актирование работ ЖКХ (до/после)</div>
-            <div class="hero-project-item">AI-диспетчер УК / Facility Desk</div>
-            <div class="hero-project-item">AI ОСС-ДокМастер</div>
+            <div class="hero-project-item">Актирование работ ЖКХ (до/после)</div>
+            <div class="hero-project-item">Нейро-диспетчер УК / Facility Desk</div>
+            <div class="hero-project-item">ОСС-ДокМастер</div>
           </div>
         </div>
 
         <aside class="request-card" id="demo" aria-label="Записаться на демонстрацию">
           <div class="demo-title">Записаться на демонстрацию</div>
 
-          <form id="requestForm">
+          <form id="requestFormTop">
             <div class="form-row">
-              <label for="name">Имя</label>
-              <input id="name" name="name" type="text" placeholder="Александр" autocomplete="name" />
+              <label for="nameTop">Имя</label>
+              <input id="nameTop" name="name" type="text" placeholder="Александр" autocomplete="name" />
             </div>
 
             <div class="form-row">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="email" autocomplete="email" />
+              <label for="emailTop">Email</label>
+              <input id="emailTop" name="email" type="email" placeholder="email" autocomplete="email" />
             </div>
 
             <div class="form-row">
-              <label for="phone">Телефон</label>
-              <input id="phone" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
+              <label for="phoneTop">Телефон</label>
+              <input id="phoneTop" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
             </div>
 
             <div class="hint">
@@ -577,7 +581,7 @@
             </div>
 
             <div class="project-body">
-              <h3>Проект 1 — «AI актирование работ ЖКХ до/после»</h3>
+              <h3>Проект 1 — «Актирование работ ЖКХ до/после»</h3>
 
               <p>
                 Приложение для управляющих компаний, подрядчиков и служб эксплуатации.
@@ -613,7 +617,7 @@
             </div>
 
             <div class="project-body">
-              <h3>Проект 2 — «AI-диспетчер УК / Facility Desk»</h3>
+              <h3>Проект 2 — «Нейро-диспетчер УК / Facility Desk»</h3>
 
               <p>
                 Система для приёма, классификации и контроля обращений жителей, арендаторов,
@@ -649,7 +653,7 @@
             </div>
 
             <div class="project-body">
-              <h3>Проект 3 — «AI ОСС-ДокМастер»</h3>
+              <h3>Проект 3 — «ОСС-ДокМастер»</h3>
 
               <p>
                 Приложение для подготовки и проверки документов общего собрания собственников.
@@ -705,6 +709,35 @@
             <a class="pill" href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="bottom-demo" id="bottom-demo">
+      <div class="wrap">
+        <aside class="request-card" aria-label="Записаться на демонстрацию">
+          <div class="demo-title">Записаться на демонстрацию</div>
+
+          <form id="requestFormBottom">
+            <div class="form-row">
+              <label for="nameBottom">Имя</label>
+              <input id="nameBottom" name="name" type="text" placeholder="Александр" autocomplete="name" />
+            </div>
+
+            <div class="form-row">
+              <label for="emailBottom">Email</label>
+              <input id="emailBottom" name="email" type="email" placeholder="email" autocomplete="email" />
+            </div>
+
+            <div class="form-row">
+              <label for="phoneBottom">Телефон</label>
+              <input id="phoneBottom" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
+            </div>
+
+            <div class="hint">
+              Подберем идею проекта, обсудим стоимость и сроки.
+            </div>
+          </form>
+        </aside>
       </div>
     </section>
   </main>
