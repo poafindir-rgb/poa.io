@@ -197,6 +197,12 @@
       background: #ffd42a;
     }
 
+    .btn-primary:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+      transform: none;
+    }
+
     .request-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -561,6 +567,10 @@
               <input id="phoneTop" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
             </div>
 
+            <button class="btn btn-primary" type="submit">
+              Отправить заявку
+            </button>
+
             <div class="hint">
               Подберем идею проекта, обсудим стоимость и сроки.
             </div>
@@ -744,6 +754,10 @@
               <input id="phoneBottom" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
             </div>
 
+            <button class="btn btn-primary" type="submit">
+              Отправить заявку
+            </button>
+
             <div class="hint">
               Подберем идею проекта, обсудим стоимость и сроки.
             </div>
@@ -762,6 +776,83 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    async function setupTelegramForm(config) {
+      const form = document.getElementById(config.formId);
+
+      if (!form) {
+        return;
+      }
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById(config.nameId).value.trim();
+        const email = document.getElementById(config.emailId).value.trim();
+        const phone = document.getElementById(config.phoneId).value.trim();
+
+        if (!name && !email && !phone) {
+          alert("Заполните хотя бы одно поле: имя, email или телефон.");
+          return;
+        }
+
+        const button = form.querySelector('button[type="submit"]');
+        const oldText = button ? button.textContent : "";
+
+        if (button) {
+          button.disabled = true;
+          button.textContent = "Отправляем...";
+        }
+
+        try {
+          const response = await fetch("/api/send-telegram", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              phone: phone,
+              source: config.source
+            })
+          });
+
+          const result = await response.json();
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "Ошибка отправки");
+          }
+
+          alert("Заявка отправлена.");
+          form.reset();
+        } catch (error) {
+          console.error(error);
+          alert("Не удалось отправить заявку. Попробуйте позже или напишите на почту.");
+        } finally {
+          if (button) {
+            button.disabled = false;
+            button.textContent = oldText;
+          }
+        }
+      });
+    }
+
+    setupTelegramForm({
+      formId: "requestFormTop",
+      nameId: "nameTop",
+      emailId: "emailTop",
+      phoneId: "phoneTop",
+      source: "верхняя форма"
+    });
+
+    setupTelegramForm({
+      formId: "requestFormBottom",
+      nameId: "nameBottom",
+      emailId: "emailBottom",
+      phoneId: "phoneBottom",
+      source: "нижняя форма"
+    });
   </script>
 </body>
 </html>
