@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ЖКХ AI приложения — лендинг + портфолио</title>
-  <meta name="description" content="AI-приложения для ЖКХ: заявки, диспетчеризация, документы, контроль качества работ и автоматизация процессов управляющих компаний." />
+  <meta
+    name="description"
+    content="AI-приложения для ЖКХ: заявки, диспетчеризация, документы, контроль качества работ и автоматизация процессов управляющих компаний."
+  />
 
   <style>
     :root {
@@ -44,8 +47,8 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .wrap {
@@ -63,7 +66,7 @@
     }
 
     .nav {
-      height: 74px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -84,11 +87,12 @@
       height: 42px;
       border-radius: 50%;
       background: var(--black);
-      color: white;
+      color: #fff;
       display: grid;
       place-items: center;
       font-size: 18px;
       font-weight: 900;
+      flex: 0 0 auto;
     }
 
     .nav-links {
@@ -127,7 +131,6 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
       padding: 10px 16px;
       border: 1px solid var(--line);
       border-radius: 999px;
@@ -183,6 +186,7 @@
       font-weight: 900;
       cursor: pointer;
       transition: 0.18s ease;
+      font-family: inherit;
     }
 
     .btn-primary {
@@ -206,55 +210,60 @@
     .request-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.58);
-      box-shadow: var(--shadow);
       padding: 30px;
-      scroll-margin-top: 95px;
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: var(--shadow);
     }
 
     .demo-title {
-      margin: 0 0 28px;
-      font-size: clamp(28px, 3.2vw, 44px);
-      line-height: 1.08;
-      font-weight: 900;
+      margin: 0 0 22px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.05;
       letter-spacing: -0.04em;
-      color: var(--text);
+      font-weight: 900;
     }
 
     .form-row {
-      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
     }
 
-    label {
-      display: block;
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 10px;
+    .form-row label {
+      font-size: 14px;
+      font-weight: 800;
     }
 
-    input,
-    textarea {
+    .form-row input {
       width: 100%;
+      min-height: 54px;
+      padding: 0 17px;
+      border-radius: 16px;
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 20px 22px;
-      background: rgba(255, 255, 255, 0.78);
-      font-size: 18px;
-      outline: none;
+      background: rgba(255, 255, 255, 0.8);
       color: var(--text);
+      font: inherit;
+      font-size: 16px;
+      outline: none;
     }
 
-    input:focus,
-    textarea:focus {
-      border-color: rgba(250, 201, 28, 0.9);
-      box-shadow: 0 0 0 4px rgba(250, 201, 28, 0.16);
+    .form-row input:focus {
+      border-color: rgba(0, 0, 0, 0.38);
+      box-shadow: 0 0 0 4px rgba(250, 201, 28, 0.18);
+    }
+
+    .request-card .btn {
+      width: 100%;
+      margin-top: 4px;
     }
 
     .hint {
-      margin-top: 12px;
+      margin-top: 16px;
       color: var(--muted);
-      font-size: 18px;
-      line-height: 1.45;
+      font-size: 15px;
+      line-height: 1.5;
+      text-align: center;
     }
 
     section {
@@ -263,9 +272,9 @@
 
     .section-head {
       display: flex;
-      justify-content: space-between;
-      gap: 24px;
       align-items: end;
+      justify-content: space-between;
+      gap: 30px;
       margin-bottom: 28px;
     }
 
@@ -304,6 +313,10 @@
       flex-direction: column;
     }
 
+    .project:last-child {
+      grid-column: 1 / -1;
+    }
+
     .project-img {
       aspect-ratio: 16 / 10;
       background: #e9e0cb;
@@ -333,52 +346,57 @@
 
     .project p {
       margin: 0;
-      color: #3f3f3f;
-      line-height: 1.55;
-      font-size: 18px;
-    }
-
-    .project ul {
-      margin: 0;
-      padding-left: 20px;
       color: #444;
-      line-height: 1.58;
-      font-size: 16px;
+      font-size: 17px;
+      line-height: 1.6;
     }
 
     .project-subtitle {
+      font-size: 17px;
       font-weight: 900;
-      color: #1f1f1f;
-      margin-bottom: -8px;
+    }
+
+    .project ul {
+      margin: -6px 0 0;
+      padding-left: 22px;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .project li + li {
+      margin-top: 8px;
     }
 
     .project-actions {
       margin-top: auto;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      padding-top: 4px;
     }
 
     .small-btn {
-      min-height: 52px;
+      min-height: 50px;
       padding: 0 22px;
       font-size: 15px;
     }
 
     .about {
       display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
-      gap: 28px;
-      align-items: center;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .portrait,
+    .about-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.62);
+      box-shadow: 0 18px 50px rgba(25, 20, 10, 0.08);
     }
 
     .portrait {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: var(--shadow);
-      min-height: 320px;
+      min-height: 420px;
     }
 
     .portrait img {
@@ -388,43 +406,37 @@
     }
 
     .about-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.52);
-      padding: 34px;
-      box-shadow: var(--shadow);
+      padding: 36px;
     }
 
     .about-card h3 {
-      margin: 0 0 18px;
-      font-size: clamp(28px, 4vw, 52px);
-      line-height: 1.04;
+      margin: 0 0 22px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.05;
       letter-spacing: -0.04em;
     }
 
     .about-card p {
+      margin: 0 0 18px;
       color: #444;
-      font-size: 19px;
-      line-height: 1.6;
-      margin: 0 0 16px;
-    }
-
-    .about-card p:last-of-type {
-      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 1.65;
     }
 
     .contact-line {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
       margin-top: 24px;
-      align-items: center;
     }
 
     .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 12px 16px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 12px 16px;
       background: rgba(255, 255, 255, 0.55);
       font-weight: 800;
     }
@@ -463,6 +475,10 @@
         grid-template-columns: 1fr;
       }
 
+      .project:last-child {
+        grid-column: auto;
+      }
+
       .section-head {
         display: block;
       }
@@ -478,7 +494,7 @@
       }
 
       .nav {
-        height: auto;
+        min-height: auto;
         padding: 14px 0;
         align-items: flex-start;
       }
@@ -542,9 +558,9 @@
           </p>
 
           <div class="hero-project-list">
-            <div class="hero-project-item">Актирование работ ЖКХ (до/после)</div>
-            <div class="hero-project-item">Нейро-диспетчер УК / Facility Desk</div>
-            <div class="hero-project-item">ОСС-ДокМастер</div>
+            <div class="hero-project-item">AI актирование работ ЖКХ (до/после)</div>
+            <div class="hero-project-item">AI диспетчер УК / Facility Desk</div>
+            <div class="hero-project-item">AI ОСС-ДокМастер</div>
           </div>
         </div>
 
@@ -554,17 +570,35 @@
           <form id="requestFormTop">
             <div class="form-row">
               <label for="nameTop">Имя</label>
-              <input id="nameTop" name="name" type="text" placeholder="Александр" autocomplete="name" />
+              <input
+                id="nameTop"
+                name="name"
+                type="text"
+                placeholder="Александр"
+                autocomplete="name"
+              />
             </div>
 
             <div class="form-row">
               <label for="emailTop">Email</label>
-              <input id="emailTop" name="email" type="email" placeholder="email" autocomplete="email" />
+              <input
+                id="emailTop"
+                name="email"
+                type="email"
+                placeholder="email"
+                autocomplete="email"
+              />
             </div>
 
             <div class="form-row">
               <label for="phoneTop">Телефон</label>
-              <input id="phoneTop" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
+              <input
+                id="phoneTop"
+                name="phone"
+                type="tel"
+                placeholder="телефон"
+                autocomplete="tel"
+              />
             </div>
 
             <button class="btn btn-primary" type="submit">
@@ -583,6 +617,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>ЖКХ AI приложения</h2>
+
           <p>
             Ниже — три демонстрационных проекта для сферы ЖКХ и управления недвижимостью:
             контроль выполненных работ, нейро-диспетчеризация заявок и подготовка документов ОСС.
@@ -605,6 +640,7 @@
               </p>
 
               <div class="project-subtitle">Что автоматизирует:</div>
+
               <ul>
                 <li>создание заявки на работу с адресом, описанием, исполнителем и статусом;</li>
                 <li>загрузку фото “до” и “после” для подтверждения результата;</li>
@@ -614,6 +650,7 @@
               </ul>
 
               <div class="project-subtitle">Польза для бизнеса:</div>
+
               <ul>
                 <li>меньше споров с подрядчиками и собственниками;</li>
                 <li>быстрее закрываются работы и акты;</li>
@@ -621,7 +658,9 @@
               </ul>
 
               <div class="project-actions">
-                <a class="btn btn-primary small-btn" href="#demo">Записаться на демонстрацию</a>
+                <a class="btn btn-primary small-btn" href="#demo">
+                  Записаться на демонстрацию
+                </a>
               </div>
             </div>
           </article>
@@ -641,6 +680,7 @@
               </p>
 
               <div class="project-subtitle">Что автоматизирует:</div>
+
               <ul>
                 <li>приём обращений по авариям, ремонтам, эксплуатации и сервисным заявкам;</li>
                 <li>AI-классификацию обращения по типу, срочности и зоне ответственности;</li>
@@ -650,6 +690,7 @@
               </ul>
 
               <div class="project-subtitle">Польза для бизнеса:</div>
+
               <ul>
                 <li>диспетчер быстрее обрабатывает поток обращений;</li>
                 <li>руководитель видит просрочки и узкие места;</li>
@@ -657,7 +698,9 @@
               </ul>
 
               <div class="project-actions">
-                <a class="btn btn-primary small-btn" href="#demo">Записаться на демонстрацию</a>
+                <a class="btn btn-primary small-btn" href="#demo">
+                  Записаться на демонстрацию
+                </a>
               </div>
             </div>
           </article>
@@ -672,12 +715,13 @@
 
               <p>
                 Приложение для подготовки и проверки документов общего собрания собственников.
-                Система помогает собрать параметры собрания, сформировать повестку,
-                подготовить бюллетени и протоколы, проверить комплектность пакета документов
-                и выгрузить результат для архива или дальнейшей работы.
+                Система помогает собрать параметры собрания, сформировать повестку, подготовить
+                бюллетени и протоколы, проверить комплектность пакета документов и выгрузить
+                результат для архива или дальнейшей работы.
               </p>
 
               <div class="project-subtitle">Что автоматизирует:</div>
+
               <ul>
                 <li>создание нового ОСС с указанием дома, формы собрания, дат и параметров голосования;</li>
                 <li>формирование повестки и структуры вопросов для голосования;</li>
@@ -688,6 +732,7 @@
               </ul>
 
               <div class="project-subtitle">Польза для бизнеса:</div>
+
               <ul>
                 <li>снижается риск ошибок в документах ОСС;</li>
                 <li>юрист или управляющий быстрее собирает комплект документов;</li>
@@ -696,7 +741,9 @@
               </ul>
 
               <div class="project-actions">
-                <a class="btn btn-primary small-btn" href="#demo">Записаться на демонстрацию</a>
+                <a class="btn btn-primary small-btn" href="#demo">
+                  Записаться на демонстрацию
+                </a>
               </div>
             </div>
           </article>
@@ -727,7 +774,9 @@
           </p>
 
           <div class="contact-line">
-            <a class="pill" href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a>
+            <a class="pill" href="mailto:poa.findir@gmail.com">
+              poa.findir@gmail.com
+            </a>
           </div>
         </div>
       </div>
@@ -741,17 +790,35 @@
           <form id="requestFormBottom">
             <div class="form-row">
               <label for="nameBottom">Имя</label>
-              <input id="nameBottom" name="name" type="text" placeholder="Александр" autocomplete="name" />
+              <input
+                id="nameBottom"
+                name="name"
+                type="text"
+                placeholder="Александр"
+                autocomplete="name"
+              />
             </div>
 
             <div class="form-row">
               <label for="emailBottom">Email</label>
-              <input id="emailBottom" name="email" type="email" placeholder="email" autocomplete="email" />
+              <input
+                id="emailBottom"
+                name="email"
+                type="email"
+                placeholder="email"
+                autocomplete="email"
+              />
             </div>
 
             <div class="form-row">
               <label for="phoneBottom">Телефон</label>
-              <input id="phoneBottom" name="phone" type="tel" placeholder="телефон" autocomplete="tel" />
+              <input
+                id="phoneBottom"
+                name="phone"
+                type="tel"
+                placeholder="телефон"
+                autocomplete="tel"
+              />
             </div>
 
             <button class="btn btn-primary" type="submit">
@@ -770,14 +837,17 @@
   <footer>
     <div class="wrap footer-row">
       <div>© <span id="year"></span> • ЖКХ AI приложения</div>
-      <div>Контакт: <a href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a></div>
+      <div>
+        Контакт:
+        <a href="mailto:poa.findir@gmail.com">poa.findir@gmail.com</a>
+      </div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    async function setupTelegramForm(config) {
+    function setupTelegramForm(config) {
       const form = document.getElementById(config.formId);
 
       if (!form) {
