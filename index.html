@@ -323,10 +323,28 @@
       overflow: hidden;
     }
 
+    .project-img a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .project-img a:focus-visible {
+      outline: 4px solid var(--yellow);
+      outline-offset: -4px;
+    }
+
     .project-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .project-img a:hover img {
+      transform: scale(1.02);
+      filter: brightness(0.95);
     }
 
     .project-body {
@@ -627,7 +645,9 @@
         <div class="portfolio">
           <article class="project">
             <div class="project-img">
-              <img src="jkh-acts-1.png" alt="Актирование работ ЖКХ" />
+              <a href="https://github.com/poafindir-rgb/jkh-acts" target="_blank" rel="noopener noreferrer" aria-label="Открыть демонстрацию AI актирования работ ЖКХ">
+                <img src="jkh-acts-1.png" alt="AI актирование работ ЖКХ" />
+              </a>
             </div>
 
             <div class="project-body">
@@ -667,7 +687,9 @@
 
           <article class="project">
             <div class="project-img">
-              <img src="uk-dispatcher-1.png" alt="Нейро-диспетчер УК" />
+              <a href="https://github.com/poafindir-rgb/uk-neuro-dispatcher" target="_blank" rel="noopener noreferrer" aria-label="Открыть демонстрацию AI диспетчера УК">
+                <img src="uk-dispatcher-1.png" alt="AI диспетчер УК / Facility Desk" />
+              </a>
             </div>
 
             <div class="project-body">
@@ -707,7 +729,9 @@
 
           <article class="project">
             <div class="project-img">
-              <img src="oss-docmaster-1.png" alt="ОСС-ДокМастер" />
+              <a href="https://github.com/poafindir-rgb/oss-docmaster" target="_blank" rel="noopener noreferrer" aria-label="Открыть демонстрацию AI ОСС-ДокМастер">
+                <img src="oss-docmaster-1.png" alt="AI ОСС-ДокМастер" />
+              </a>
             </div>
 
             <div class="project-body">
